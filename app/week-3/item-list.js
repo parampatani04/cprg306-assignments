@@ -91,4 +91,4 @@ function ItemList() {
       )
 }
 
-export default ItemList
+export default ItemList;
