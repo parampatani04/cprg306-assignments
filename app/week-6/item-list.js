@@ -2,10 +2,9 @@
 
 import React, { useState } from 'react';
 import items from './items.json';
-import item from '../week-6/item.js';
+import Item from '../week-6/item.js';
 
-const ItemList = () => {
-    const [sortBy, setSortBy] = useState('name');
+
 
 const ItemList = () => {
     const [sortBy, setSortBy] = useState('name');
@@ -24,20 +23,20 @@ const ItemList = () => {
             <div>
                 <button
                     onClick={() => setSortBy('name')}
-                    style={{ backgroundColor: sortBy === 'name' ? 'lightblue' : 'white' }}
+                    className= {` rounded-lg p-3 m-3 ${sortBy === 'name' ? 'bg-orange-500' : 'bg-orange-800'}`}
                 >
                     Sort by Name
                 </button>
                 <button
                     onClick={() => setSortBy('category')}
-                    style={{ backgroundColor: sortBy === 'category' ? 'lightblue' : 'white' }}
+                    className= {` rounded-lg p-3 m-3 ${sortBy === 'category' ? 'bg-orange-500' : 'bg-orange-800'}`}
                 >
                     Sort by Category
                 </button>
             </div>
             <ul>
                 {sortedItems.map(item => (
-                    <Item key={item.id} item={item} />
+                    <Item key={item.id} name={item.name} quantity={item.quantity} category={item.category} />
                 ))}
             </ul>
         </div>
